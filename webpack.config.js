@@ -13,12 +13,26 @@ const config = {
     filename: 'bundle.js'
   },
   devtool: dev ? 'eval' : 'source-map',
+  module: {
+    rules: [
+      {
+        enforce: 'pre',
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+        options: {
+          failOnError: true
+          // fix: true DO WE WANT TO ENABLE AUTO FIX?
+        }
+      }
+    ]
+  },
   plugins: [
     new CleanWebpackPlugin(
-      dev ? [] : ['dist'], 
+      dev ? [] : ['dist'],
       {
         root: path.resolve(__dirname, '../')
-        // exclude: [ 'dist/tmp' ] do we want to remove it everytime we build?
+        // exclude: [ 'dist/tmp' ] DO WE WANT TO REMOVE PREVIOUS PACKAGES EVERYTIME WE BUILD?
       }
     ),
     new webpack.optimize.UglifyJsPlugin({
@@ -33,8 +47,9 @@ const config = {
     ],
     {
       ignore: [
-        'node_modules/**/*', 
+        'node_modules/**/*',
         'tmp/**/*',
+        'dist/**/*',
         'npm-debug.log'
       ],
       copyUnmodified: dev ? false : true
