@@ -1,22 +1,37 @@
 # ZAF Boilerplate
 
-**How to setup dev environment**
+A starter configuration for building Zendesk apps using framework V2.
 
-In case some code need to be changed, go in the ``src`` folder using the terminal and run the command:
+**What webpack configuration does**
 
-```npm install```
+* Generate a ``dist`` folder which will contain the source code, the bundle.js
+file and all the configuration files needed to run the app inside Zendesk
 
-This command will download all the dependencies to make all the project working.
+* Linting to produce more consistent and readable code.
+[ESLint Ruels](http://eslint.org/docs/rules)
 
-Before start making changes, run the command:
+Also, integration of the following libraries:
 
-```npm run dev```
+* [Underscore.js](http://underscorejs.org/)
 
-This command will enable the watcher which will instantly generate the bundle file and make the changes visible into the browser.
+* [ES6Promise](https://github.com/stefanpenner/es6-promise) (for a full
+  compatibility of promises with IE11)
 
-Once all the changes are completed, stop the watcher with ``ctrl+c`` and run the command:
+**How to start coding**
 
-```npm run build```
+Using the terminal, reach the folder project and run:
 
-This command will generate a ``dist`` folder which can be used to generate the new package to be uploaded in support.
+``npm install``
 
+This command will download all the dependencies to make the project working.
+
+Before start coding, run the command:
+
+``npm run dev``
+
+This command will enable the watcher which will instantly auto-generate the bundle.js.
+
+Once all the changes are completed, stop the watcher with ``ctrl+c`` and run the
+command:
+
+``npm run build``
