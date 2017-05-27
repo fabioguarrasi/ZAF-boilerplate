@@ -1,0 +1,21 @@
+{
+  "name": "brandify",
+  "version": "1.0.0",
+  "description": "This app disable the brand selectbox in the ticket/new_ticket view showing only the brand which the agent is part of. Also, it's possible to customize the user fields to show based on the logged agent.",
+  "main": "assets/bundle.js",
+  "dependencies": {
+    "es6-promise": "^4.1.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.16",
+    "copy-webpack-plugin": "^4.0.1",
+    "webpack": "^2.6.0"
+  },
+  "scripts": {
+    "build": "NODE_ENV=production webpack",
+    "dev": "NODE_ENV=dev webpack --watch"
+  },
+  "author": "",
+  "license": "ISC"
+}
